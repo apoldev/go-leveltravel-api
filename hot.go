@@ -55,7 +55,7 @@ type HotToursFilter struct {
 	Page       int
 }
 
-func (l *LevelTravelApi) HotTours(startDate, endDate, sortBy string, filter HotToursFilter) (hotTours *HotTours, err error) {
+func (l *LevelTravelApi) HotTours(startDate, endDate, sortBy string, filter HotToursFilter) (hotTours HotTours, err error) {
 	params := map[string]string{
 		"start_date": startDate,
 		"end_date":   endDate,
@@ -94,6 +94,6 @@ func (l *LevelTravelApi) HotTours(startDate, endDate, sortBy string, filter HotT
 		params["page"] = fmt.Sprintf("%d", filter.Page)
 	}
 
-	err = l.getJson("/hot/tours", params, hotTours)
+	err = l.getJson("/hot/tours", params, &hotTours)
 	return
 }

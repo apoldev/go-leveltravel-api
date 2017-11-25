@@ -28,8 +28,8 @@ type DepartureAirport struct {
 	Timezone string `json:"timezone"`
 }
 
-func (l *LevelTravelApi) Departures() (departures *Departures, err error) {
-	err = l.getJson("/references/departures", map[string]string{}, departures)
+func (l *LevelTravelApi) Departures() (departures Departures, err error) {
+	err = l.getJson("/references/departures", map[string]string{}, &departures)
 	return
 }
 
@@ -53,8 +53,8 @@ type DestinationCity struct {
 	NameEn string `json:"name_en"`
 }
 
-func (l *LevelTravelApi) Destinations() (destinations *Destinations, err error) {
-	err = l.getJson("/references/destinations", map[string]string{}, destinations)
+func (l *LevelTravelApi) Destinations() (destinations Destinations, err error) {
+	err = l.getJson("/references/destinations", map[string]string{}, &destinations)
 	return
 }
 
@@ -70,8 +70,8 @@ type Operator struct {
 	CodeName  string `json:"code_name"`
 }
 
-func (l *LevelTravelApi) Operators() (operators *Operators, err error) {
-	err = l.getJson("/references/operators", map[string]string{}, operators)
+func (l *LevelTravelApi) Operators() (operators Operators, err error) {
+	err = l.getJson("/references/operators", map[string]string{}, &operators)
 	return
 }
 
@@ -86,8 +86,8 @@ type Airline struct {
 	Code string `json:"code"`
 }
 
-func (l *LevelTravelApi) Airlines() (airlines *Airlines, err error) {
-	err = l.getJson("/references/airlines", map[string]string{}, airlines)
+func (l *LevelTravelApi) Airlines() (airlines Airlines, err error) {
+	err = l.getJson("/references/airlines", map[string]string{}, &airlines)
 	return
 }
 
@@ -95,8 +95,8 @@ type Airports struct {
 	Success bool `json:"success"`
 }
 
-func (l *LevelTravelApi) Airports() (airports *Airports, err error) {
-	err = l.getJson("/references/airports", map[string]string{}, airports)
+func (l *LevelTravelApi) Airports() (airports Airports, err error) {
+	err = l.getJson("/references/airports", map[string]string{}, &airports)
 	return
 }
 
@@ -182,8 +182,8 @@ type HotelRestTypes struct {
 	Active   int `json:"active"`
 }
 
-func (l *LevelTravelApi) HotelsByIds(hotelIds []string) (hotels *Hotels, err error) {
-	err = l.getJson("/references/hotels", map[string]string{"hotel_ids": strings.Join(hotelIds, ",")}, hotels)
+func (l *LevelTravelApi) HotelsByIds(hotelIds []string) (hotels Hotels, err error) {
+	err = l.getJson("/references/hotels", map[string]string{"hotel_ids": strings.Join(hotelIds, ",")}, &hotels)
 	return
 }
 
@@ -200,8 +200,8 @@ type ShortHotel struct {
 	CountryId int    `json:"country_id"`
 }
 
-func (l *LevelTravelApi) HotelsByRegions(regionIds []string) (hotels *ShortHotels, err error) {
-	err = l.getJson("/references/hotels", map[string]string{"region_ids": strings.Join(regionIds, ",")}, hotels)
+func (l *LevelTravelApi) HotelsByRegions(regionIds []string) (hotels ShortHotels, err error) {
+	err = l.getJson("/references/hotels", map[string]string{"region_ids": strings.Join(regionIds, ",")}, &hotels)
 	return
 }
 
@@ -211,7 +211,7 @@ type HotelsDump struct {
 	Link        string `json:"link"`
 }
 
-func (l *LevelTravelApi) HotelsDump() (hotelsDump *HotelsDump, err error) {
-	err = l.getJson("/references/hotel_dump", map[string]string{}, hotelsDump)
+func (l *LevelTravelApi) HotelsDump() (hotelsDump HotelsDump, err error) {
+	err = l.getJson("/references/hotel_dump", map[string]string{}, &hotelsDump)
 	return
 }
