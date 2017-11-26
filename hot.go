@@ -16,6 +16,7 @@ type HotTour struct {
 	Link               string       `json:"link"`
 	Date               string       `json:"date"`
 	Nights             int          `json:"nights"`
+	Price              int          `json:"price"`
 	Adults             int          `json:"adults"`
 	Region             string       `json:"region"`
 	Country            string       `json:"country"`
