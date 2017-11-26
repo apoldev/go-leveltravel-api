@@ -41,6 +41,7 @@ Documentation
 -------------
 
 You can read package documentation [here](http:godoc.org/github.com/liderman/go-leveltravel-api).
+
 Official docs: [here](https://level.travel/affiliate/api_docs/json_api)
 
 Road map
@@ -48,7 +49,7 @@ Road map
 
 * Full coverage by tests
 * Full support references api
-* Error handling from level travel api
+* Error handling from Level.Travel Api
 * Support search methods
 * Support orders methods
 * Support pay methods (Probably not soon)
