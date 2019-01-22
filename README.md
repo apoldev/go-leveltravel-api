@@ -12,14 +12,14 @@ Usage
 -----------
 Getting a list of hot tours:
 ```go
-    api := NewLevelTravelApi("YOUR_APIKEY")
-    reps, _ := api.HotTours("10.01.2018", "20.01.2018", "prices", HotToursFilter{})
+    api := leveltravel.NewLevelTravelApi("YOUR_APIKEY")
+    reps, _ := api.HotTours("10.01.2018", "20.01.2018", "prices", leveltravel.HotToursFilter{})
     fmt.Println(reps);
 ```
 
 Getting a list of airlines:
 ```go
-    api := NewYandexRapsApi("YOUR_APIKEY")
+    api := leveltravel.NewLevelTravelApi("YOUR_APIKEY")
     reps, err := api.Airlines()
     fmt.Println(reps);
 ```
